@@ -5,9 +5,12 @@
 
 
 import os
+import colorama
+from colorama import Fore, Back, Style
+colorama.init
 os.system("cls")
 
-print("Программа, которая принимает на вход вещественное число и показывает сумму его цифр.")
+print(Fore.YELLOW + "Программа, которая принимает на вход вещественное число и показывает сумму его цифр.")
 
 def number_input(input_string):
     while type:
@@ -16,9 +19,9 @@ def number_input(input_string):
             digit = float(digit)
             return digit
         except ValueError:
-            print("Введено неверное значение. Только числа!!!")
+            print(Fore.RED + "Введено неверное значение. Только числа!!!")
 
-number = number_input("Введите дробное число : ")
+number = number_input(Fore.WHITE + "Введите дробное число : ")
 
 def adding_numbers(digit):
     if digit < 0:
@@ -34,3 +37,4 @@ def adding_numbers(digit):
     print(result)
 
 adding_numbers(number)
+print(Style.RESET_ALL)

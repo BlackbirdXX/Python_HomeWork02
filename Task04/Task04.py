@@ -7,9 +7,12 @@
 import math
 import time
 import os
+import colorama
+from colorama import Fore, Back, Style
+colorama.init
 os.system("cls")
 
-print('Программа выдающая случайное число.')
+print(Fore.YELLOW + 'Программа выдающая случайное число.')
 
 def number_input(input_string):
     while type:
@@ -18,7 +21,7 @@ def number_input(input_string):
             digit = int(digit)
             return digit
         except ValueError:
-            print("Введено неверное значение. Только числа!!!")
+            print(Fore.RED + "Введено неверное значение. Только числа!!!")
 
 min_range = number_input('Введите минимальное значение  :  ')
 max_range = number_input('Введите максимальное значение  :  ')
@@ -32,3 +35,4 @@ def LinearCR_fill_array(seed,min_value,max_value):
     return result
    
 print(LinearCR_fill_array(time.time(),min_range, max_range))
+print(Style.RESET_ALL)
